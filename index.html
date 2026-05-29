@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Gestão de Alunos</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="topo">
+      <h1>Gestão de Alunos</h1>
+
+      <div class="topo-direita">
+        <button onclick="abrirModalAdicionar()">Adicionar Aluno</button>
+        <button class="logout-btn" onclick="logout()">Sair</button>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabelaAlunos"></tbody>
+    </table>
+
+  </div>
+
+</div>
+
+<!-- MODAL ADICIONAR -->
+<div class="modal" id="modalAdicionar">
+  <div class="modal-content">
+
+    <h2>Adicionar Aluno</h2>
+
+    <label>Nome</label>
+    <input id="nomeAdd">
+
+    <label>Email</label>
+    <input id="emailAdd">
+
+    <div class="modal-buttons">
+      <button onclick="fecharModal('modalAdicionar')">Cancelar</button>
+      <button onclick="adicionarAluno()">Salvar</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MODAL EDITAR -->
+<div class="modal" id="modalEditar">
+  <div class="modal-content">
+
+    <h2>Editar Aluno</h2>
+
+    <input id="idEdit" hidden>
+
+    <label>Nome</label>
+    <input id="nomeEdit">
+
+    <label>Email</label>
+    <input id="emailEdit">
+
+    <div class="modal-buttons">
+      <button onclick="fecharModal('modalEditar')">Cancelar</button>
+      <button onclick="editarAluno()">Atualizar</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function logout(){
+    // limpa sessão
+    localStorage.removeItem("usuario");
+
+    // redireciona para login
+    window.location.href = "login.html";
+}
+</script>
+
+<script src="javascript/script.js"></script>
+
+</body>
+</html>
