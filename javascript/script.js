@@ -1,17 +1,3 @@
-// --- SISTEMA DE PROTEÇÃO ---
-// Verifica se o "crachá" existe no localStorage
-if (localStorage.getItem('usuario_logado') !== 'true') {
-    // Se não estiver logado, avisa e expulsa para o login
-    alert("Acesso restrito! Por favor, faça login.");
-    window.location.href = 'login.html';
-}
-
-// --- LÓGICA DE LOGOUT ---
-// Adicione um botão no seu HTML com id="btnLogout"
-document.getElementById('btnLogout')?.addEventListener('click', () => {
-    localStorage.removeItem('usuario_logado'); // Remove o crachá
-    window.location.href = 'login.html'; // Volta para o início
-});
 
 
 const API_URL = "https://projeto-alunos-production.up.railway.app/alunos";
